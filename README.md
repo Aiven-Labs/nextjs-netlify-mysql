@@ -25,7 +25,7 @@ You can fork this branch and deploy the application immediately to Netlify by cl
 ## Development setup
 
 - Install Node version 18
-- Copy [.env.template](.env.template) as .env and set DATABASE_URI and REDIS_URI
+- Copy [.env.template](.env.template) as .env and set DATABASE_URL and REDIS_URI
 - Install the packages: `npm ci`
 - Setup the database by running: `npm run reset-db`
 - Start the development server: `npm run dev`
