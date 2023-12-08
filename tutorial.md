@@ -23,13 +23,13 @@ Follow the instructions below to create your free MySQL and Redis services with 
 1. In the project you want to create a service in, go to **Services**.
 1. On the **Services** page, click **Create service**.
 1. Select the service you want to create, either **MySQL** or **Redis**.
-1. Select **AWS** as the cloud provider and choose the region.
+1. Select **DigitalOcean** as the cloud provider and choose the region.
 
-   We recommend using `us-east-1` to minimise latency, as this region will be closest to where the Netlify functions are deployed if using their free plan. However, the Aiven free plans are currently available in the following regions and you can pick whichever you like:
+   We recommend using `do-nyc` to minimise latency, as this region will be closest to where the Netlify functions are deployed if using their free plan. However, the Aiven free plans are currently available in the following regions and you can pick whichever you like:
 
-   - EMEA: aws-eu-north-1, aws-eu-west-1, aws-eu-west-2, aws-eu-west-3
-   - Americas: aws-us-east-1, aws-us-east-2, aws-us-west-2, aws-ca-central-1
-   - APAC: aws-ap-south-1
+   - EMEA: `do-ams` (Amsterdam), `do-ldn` (London), `do-fra` (Frankfurt)
+   - Americas: `do-nyc` (New York), `do-sfo` (San Francisco), `do-tor` (Toronto)
+   - APAC: `do-blr` (Bangalore)
 
 1. Select **Free** plan.
 1. Click **Create free service**.
