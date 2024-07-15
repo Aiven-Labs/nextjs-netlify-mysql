@@ -1,10 +1,10 @@
-# Robust and Secure: Deploy Scalable JAM Stack Applications on Netlify with MySQL and Redis
+# Robust and Secure: Deploy Scalable JAM Stack Applications on Netlify with MySQL and Aiven for Caching
 
-This tutorial guides you through deploying a [Netlify](https://www.netlify.com/) web application with an [Aiven for PostgreSQL](https://aiven.io/mysql) and [Aiven for Redis®](https://aiven.io/redis) backend.
+This tutorial guides you through deploying a [Netlify](https://www.netlify.com/) web application with an [Aiven for MySQL](https://aiven.io/mysql) and [Aiven for Caching](https://aiven.io/caching) backend.
 
-The sample application used in this tutorial is a cooking recipe library displaying open source [recipe data](https://www.kaggle.com/datasets/thedevastator/better-recipes-for-a-better-life). It's built in [Next.js](https://nextjs.org/), which can be deployed to Netlify with ease, and connects to PostgreSQL with [Prisma](https://www.prisma.io/) and Redis with [ioredis](https://www.npmjs.com/package/ioredis).
+The sample application used in this tutorial is a cooking recipe library displaying open source [recipe data](https://www.kaggle.com/datasets/thedevastator/better-recipes-for-a-better-life). It's built in [Next.js](https://nextjs.org/), which can be deployed to Netlify with ease, and connects to PostgreSQL with [Prisma](https://www.prisma.io/) and Aiven for Caching with [ioredis](https://www.npmjs.com/package/ioredis).
 
-The source code for the application is available on GitHub at https://github.com/dewan-ahmed/nextjs-netlify-mysql-redis.
+The source code for the application is available on GitHub at https://github.com/Aiven-Labs/nextjs-netlify-mysql.
 
 # Before you begin
 
@@ -15,14 +15,14 @@ Before starting the tutorial, do the following if you haven't already:
 1. Install the [GitHub CLI](https://github.com/cli/cli#installation).
 1. Install the [Netlify CLI](https://docs.netlify.com/cli/get-started/).
 
-# Step 1. Create free MySQL and Redis services
+# Step 1. Create free MySQL and Aiven for Caching services
 
-Follow the instructions below to create your free MySQL and Redis services with Aiven. You can read more about the Aiven free plans in the [Aiven documentation](https://docs.aiven.io/docs/platform/concepts/free-plan).
+Follow the instructions below to create your free MySQL and Aiven for Caching services with Aiven. You can read more about the Aiven free plans in the [Aiven documentation](https://docs.aiven.io/docs/platform/concepts/free-plan).
 
 1. Login to [Aiven Console](https://console.aiven.io).
 1. In the project you want to create a service in, go to **Services**.
 1. On the **Services** page, click **Create service**.
-1. Select the service you want to create, either **MySQL** or **Redis**.
+1. Select the service you want to create, either **MySQL** or **Aiven for Caching**.
 1. Select **DigitalOcean** as the cloud provider and choose the region.
 
    We recommend using `do-nyc` to minimise latency, as this region will be closest to where the Netlify functions are deployed if using their free plan. However, the Aiven free plans are currently available in the following regions and you can pick whichever you like:
@@ -36,12 +36,12 @@ Follow the instructions below to create your free MySQL and Redis services with 
 
 # Step 2. Get the application code
 
-To deploy the application to Netlify you'll need to have your own GitHub repository for [dewan-ahmed/nextjs-netlify-mysql-redis](https://github.com/dewan-ahmed/nextjs-netlify-mysql-redis). See the relevant [GitHub CLI instructions to fork the repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo?tool=cli#forking-a-repository).
+To deploy the application to Netlify you'll need to have your own GitHub repository for [Aiven-Labs/nextjs-netlify-mysql](https://github.com/Aiven-Labs/nextjs-netlify-mysql). See the relevant [GitHub CLI instructions to fork the repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo?tool=cli#forking-a-repository).
 
 Fork and clone the forked repository with GitHub CLI
 
 ```
-gh repo fork https://github.com/dewan-ahmed/nextjs-netlify-mysql-redis.git --clone --remote
+gh repo fork https://github.com/Aiven-Labs/nextjs-netlify-mysql.git --clone --remote
 ```
 
 You can name the repository by adding `--fork-name <name>` to the command.
@@ -50,10 +50,10 @@ You can name the repository by adding `--fork-name <name>` to the command.
 
 Follow the instructions below to configure continuous deployment. This will automatically deploy your changes.
 
-1. Navigate to the `nextjs-netlify-mysql-redis` directory on your local machine:
+1. Navigate to the `nextjs-netlify-mysql` directory on your local machine:
 
    ```
-   cd nextjs-netlify-mysql-redis
+   cd nextjs-netlify-mysql
    ```
 
 1. Sign into your Netlify account to obtain the access token:
@@ -123,11 +123,11 @@ Congratulations, you have now successfully deployed your application. Any subseq
 
 This example application has a **Home** page with some relevant links and a **Recipes** page where you can browse and inspect recipes. You can like recipes that seem interesting and filter the list to show only liked ones. Furthermore, you can see interesting statistics from all of the recipes and those that are liked.
 
-Aiven for PostgreSQL is used as the database for storing all recipes and whether they are liked or not. Aiven for Redis is optional for the app to function, but when configured statistics are cached to offer faster response time. You are able to toggle Redis on and off. The database response times are shown in the app to demonstrate the difference.
+Aiven for PostgreSQL is used as the database for storing all recipes and whether they are liked or not. Aiven for Caching is optional for the app to function, but when configured statistics are cached to offer faster response time. You are able to toggle Caching on and off. The database response times are shown in the app to demonstrate the difference.
 
 # For more information, see
 
 - [Aiven documentation](https://docs.aiven.io)
-- [Aiven for PostgreSQL documentation](https://docs.aiven.io/docs/products/postgresql)
-- [Aiven for Redis documentation](https://docs.aiven.io/docs/products/redis)
+- [Aiven for MySQL documentation](https://aiven.io/docs/products/mysql)
+- [Aiven for Caching documentation](https://aiven.io/docs/products/caching)
 - [Netlify CLI Command list](https://cli.netlify.com/)
