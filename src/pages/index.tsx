@@ -14,14 +14,14 @@ export default function Home() {
       style={{ textAlign: 'center' }}
     >
       <Box display="flex" gap="3" justifyContent="center" className="flex-wrap">
-        <Chip text="Aiven for PostgreSQL®" />
+        <Chip text="Aiven for MySQL" />
         <Chip text="Aiven for Caching" />
       </Box>
       <Typography.LargeHeading>
         Free Netlify quickstart recipe library app using Next.js, Prisma and Aiven
       </Typography.LargeHeading>
       <Typography.Large color="grey-60">
-        A PostgreSQL and Aiven for Caching optimized Next.js application built with Aiven, Prisma and open source data - for free.
+        A MySQL and Aiven for Caching optimized Next.js application built with Aiven, Prisma and open source data - for free.
       </Typography.Large>
       <Box.Flex gap="5" justifyContent="center" className="flex-wrap">
         <Button.ExternalLink
